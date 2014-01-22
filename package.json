@@ -1,0 +1,19 @@
+{
+  "name": "gh-lookup",
+  "version": "0.0.1",
+  "repository": "segmentio/gh-lookup",
+  "description": "github project release semver lookup",
+  "keywords": [
+    "github",
+    "api"
+  ],
+  "dependencies": {
+    "gh-releases": "0.0.1",
+    "semver": "~2.2.1"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "license": "MIT"
+}
