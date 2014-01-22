@@ -10,7 +10,8 @@ var assert = require('assert');
 /**
  * Lookup release.
  *
- * - `token` github token
+ * - `user` github user
+ * - `pass` github pass
  * - `repo` github repo
  * - `version` version to match
  *

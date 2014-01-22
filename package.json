@@ -1,6 +1,6 @@
 {
   "name": "gh-lookup",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "repository": "segmentio/gh-lookup",
   "description": "github project release semver lookup",
   "keywords": [
@@ -8,7 +8,7 @@
     "api"
   ],
   "dependencies": {
-    "gh-releases": "0.0.1",
+    "gh-releases": "0.1.0",
     "semver": "~2.2.1"
   },
   "devDependencies": {
