@@ -24,7 +24,13 @@ module.exports = function(opts, fn){
   assert(opts.version, 'version required');
   releases(opts, function(err, tags){
     if (err) return fn(err);
-    var tag = find(opts, tags);
+
+    try {
+      var tag = find(opts, tags);
+    } catch (err) {
+      return fn(err);
+    }
+
     fn(null, tag);
   });
 };
