@@ -40,10 +40,22 @@ module.exports = function(opts, fn){
  */
 
 function find(pkg, tags) {
+  var matchingTag, matchingVer;
   for (var i = 0; i < tags.length; i++) {
     var tag = tags[i];
-    if (semver.satisfies(tag.name, pkg.version)) {
-      return tag;
+    if (tag.name === pkg.version) return tag;
+
+    var version = semver.valid(tag.name, true);
+    if (version != null && semver.satisfies(version, pkg.version)) {
+      if (matchingVer == null || semver.compare(matchingVer, version) < 0) {
+        matchingTag = tag;
+        matchingVer = version;
+      }
     }
   }
+  return matchingTag;
 }
+
+// exposed for unit tests only
+module.exports._find = find
+
